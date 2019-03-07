@@ -5,11 +5,11 @@ import TrackList from '../TrackList/TrackList';
 class Playlist extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { name: ''};
     this.handleNameChange = this.handleNameChange.bind(this);
   }
   handleNameChange(e) {
-    const name = e.target.value;
-    this.props.onChange(name);
+    this.setState = { name: e.target.value};
   }
   render() {
     return (
