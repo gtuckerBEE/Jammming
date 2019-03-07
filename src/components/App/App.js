@@ -13,46 +13,9 @@ class App extends React.Component {
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
     this.search = this.search.bind(this);
-    this.state = { searchResults: [
-      {
-        name: 'Tiny Dancer',
-        artist: 'Elton John',
-        album: 'Memories',
-        id:'002'
-      },
-      {
-        name: 'Tiny Dancer',
-        artist: 'Briteny Spears',
-        album: 'Touch me if you can',
-        id:'004'},
-        {
-          name:'Tiny Dancer',
-          artist: 'Michelle Obama',
-          album: 'WhiteHouse',
-          id: '10000'
-        },
-        ],
+    this.state = { searchResults: [],
         playlistName: "Shaq's list",
-        playlistTracks: [
-          {
-            name:"It's Cold Outside",
-            artist:"Ice",
-            album:"Freezer Burn",
-            id:"000"
-          },
-          {
-            name:"How about that!",
-            artist:"You know who",
-            album:"IDK",
-            id:"001"
-          },
-          {
-            name:"Oda's paws",
-            artist:"Mae",
-            album:"Dog Town",
-            id:"0002"
-          }
-        ]
+        playlistTracks: []
       }
   }
 
