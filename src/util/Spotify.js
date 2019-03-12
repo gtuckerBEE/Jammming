@@ -1,6 +1,6 @@
 const url = 'https://accounts.spotify.com/authorize';
 let accessToken = '';
-let redirectURI = 'http://get_your_jam_on.surge.sh';
+let redirectURI = 'http://get_your_jam_on.surge.sh/';
 let clientID = '36b7ea3dbddc4799a1aee3995f9e6f1a';
 let clientSecret = '8cda8660148348cab5914eb6e982cc5f';
 const responseType = 'token';
@@ -14,11 +14,10 @@ const Spotify = {
 })
 },
 
-  getAccessToken() {
+getAccessToken() {
   if(accessToken)
     return accessToken;
-  else if(window.location.href.match(/access_token=([^&]*)/) && window.location.href.match(/expires_in=([^&]*)/))
-  {
+  else if(window.location.href.match(/access_token=([^&]*)/) && window.location.href.match(/expires_in=([^&]*)/)) {
     let accessToken = window.location.href.match(/access_token=([^&]*)/)[1];
     let expiresIn = window.location.href.match(/expires_in=([^&]*)/)[1];
 
@@ -26,13 +25,10 @@ const Spotify = {
     window.history.pushState('Access Token', null, '/');
 
     return accessToken;
+  } else {
+    window.location = authUrl;
   }
-  else
-  {
-    let url = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
-    window.location = url;
-  }
- },
+},
 
  savePlaylist(name, trackUris) {
 
