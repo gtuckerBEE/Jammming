@@ -1,6 +1,11 @@
-const accessToken = '';
-const clientID = '36b7ea3dbddc4799a1aee3995f9e6f1a';
-const redirectURI = "http://localhost:3000/";
+const url = 'https://accounts.spotify.com/authorize';
+let accessToken = '';
+let redirectURI = 'http://get_your_jam_on.surge.sh';
+let clientID = '36b7ea3dbddc4799a1aee3995f9e6f1a';
+let clientSecret = '8cda8660148348cab5914eb6e982cc5f';
+const responseType = 'token';
+const scope = 'playlist-modify-public';
+const authUrl = `${url}?client_id=${clientID}&response_type=${responseType}&scope=${scope}&redirect_uri=${redirectURI}`;
 
 const Spotify = {
   search(term) {
